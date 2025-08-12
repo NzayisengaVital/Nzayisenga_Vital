@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <style>#map { height: 500px; width: 100%; }</style>
+</head>
+<body>
+  <h2>Locations Dashboard</h2>
+  <div id="map"></div>
+
+  <!-- Load Google Maps API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoXSkg58yqw86UzX8syMU7MQXf5oPPAO0&callback=initMap" async defer></script>
+
+  <script>
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 2,
+        center: {lat: 0, lng: 0}
+      });
+
+      var locations = {{ locations|tojson }};
+      locations.forEach(loc => {
+        var marker = new google.maps.Marker({
+          position: {lat: loc.lat, lng: loc.lng},
+          map: map
+        });
+
+        var infowindow = new google.maps.InfoWindow({
+          content: loc.name || "Anonymous"
+        });
+
+        marker.addListener('click', () => {
+          infowindow.open(map, marker);
+        });
+      });
+    }
+  </script>
+</body>
+</html>

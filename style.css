@@ -1,0 +1,180 @@
+body{
+    background-image: url("cross.jpg");
+    background-size: cover;
+    background-position-x: 50px;
+    background-attachment: fixed;
+}
+.title{
+    position: fixed;   /* Makes it fixed on the screen */
+      top: -20px;
+      left: 10;
+      width: 100%;
+      background-color: #333;
+      color: white;
+      padding: 5px 10px;
+      z-index: 1000;
+      float: left;
+      right: 0;
+      text-align: start;
+      word-spacing: 10px;
+      white-space: 10px;
+      width: 1250px;
+}
+.menu{
+    float: right;
+    padding: 10px;
+    margin: auto;
+    word-spacing: 10px;
+    margin-top: 30px;
+    text-align: center;
+    
+}
+a{
+    background-color: rgb(246, 255, 127);
+    
+    border-width: 10;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: large;
+}
+a:hover{
+    background-color: rgb(7, 43, 247);
+    color: rgb(244, 241, 241);
+    transition-duration: 0.5s;
+    
+}
+.hello{
+    width: 600px;
+    height: 400px;
+    background-image: url("pray.jpg");
+    background-size: cover;
+    border-radius: 50px;
+    
+    float: right;
+    margin-top: 200px;
+    float:50px;
+    color: aliceblue;
+    text-align: center;
+}
+strong{
+    background-color: rgb(0, 255, 8);
+    font-size: 30px;
+}
+.hi{
+    font-size: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    word-spacing: 2px;
+}
+.link{
+    float: left;
+    
+    margin-top: 200px;
+    margin-left: 50px;
+    width: 500px;
+    height: 200px;
+    background-color: black;
+    word-spacing: 10px;
+    margin-left: 2px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    border-radius: 50px;
+}
+.pray{
+    color: azure;
+
+}
+.body{
+    width: 400px;
+    height: 200px;
+    color: rgb(249, 245, 245);
+    margin-top: 200px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10px;
+}
+aside{
+    background-color: blueviolet;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.sub_contact{
+    margin-top: 200px;
+    width: 600px;
+    height: 400px;
+    color: white;
+    background-color: black;
+    float: right;
+    float: 50px;
+    margin-right: 50px;
+    font-size: large;
+    border-radius: 50px;
+    text-align: center;
+    
+}
+.kwizerimana, .bible{
+    font-size: larger;
+    transition: ease-in;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    scroll-padding: 20x;
+
+}
+.aside{
+    float: right;
+    margin-top: -300px;
+    margin-right: 50px;
+}
+.para{
+    color: aliceblue;
+}
+.cross2{
+    float: left;
+    margin-top: 100px;
+    margin-left: 20px;
+    position: fixed;
+}
+.prayer1{
+    background-color: rgb(10, 239, 162);
+    margin-top: 100px;
+    width: 1000px;
+    height: 500px;
+    
+}
+.footer{
+    position:relative;
+     top: 700;
+     bottom: 0;
+     color: cornsilk;
+     background-color: cornflowerblue;
+     display: flex;
+     width: 1250px;
+     
+}
+.list{
+    
+    word-spacing: 5px;
+    scroll-padding: 30px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    margin-bottom: 5px;
+    text-decoration: double;
+
+
+}
+.foot{
+    text-align: center;
+    margin-bottom: 5px;
+    
+}
+.prayer1 :double-button{
+    width: 400px;
+    height: 400px;
+}
+.iframe{
+    margin-top: 100px;
+    background-color: #1312121a;
+    float: left;
+    position: fixed;
+    color: red;
+}
